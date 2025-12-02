@@ -4,9 +4,33 @@
 }
 
 header {
-    padding: 0!important;
-    margin: 0
+    padding: 0 !important;
 }
+
+.hero__identity {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .hero__logo {
+        max-width: 200px;
+        height: auto;
+    }
+    
+    .hero__site-title {
+        font-size: 32px;
+        font-weight: bold;
+    }   
+}
+
+.hero__carousel {
+    position: relative;
+}
+
+
+
 
 body {
     display: flex;
@@ -33,13 +57,18 @@ aside {
     flex-flow:column nowrap;
     width: 35%;
     background-color: yellow;
-    
+
 }
 
 section {
     width: 100%
 }
 
+//  utility 
+.max-width {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 .btn {
   display: inline-block;

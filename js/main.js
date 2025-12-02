@@ -33,9 +33,9 @@
 $(document).ready(function() {
 
     console.log("Initializing slick slider...");
-    
+
   $('.hero-slider').slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     dots: true,
     arrows: true,
