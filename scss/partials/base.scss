@@ -1,0 +1,70 @@
+:root {
+  --color-black: black;
+  --color-white: white;
+}
+
+header {
+    padding: 0!important;
+    margin: 0
+}
+
+body {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: var(--color-white);
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: pink;
+    max-width: 60%;
+    margin-right: 0 !important;
+    margin-left: 2rem !important;
+}
+
+aside {
+    display: flex;
+    flex-flow:column nowrap;
+    width: 35%;
+    background-color: yellow;
+    
+}
+
+section {
+    width: 100%
+}
+
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 0 black;
+  text-decoration: none;
+  transition: all .1s linear;
+  
+  &:hover,
+  &:focus {
+    background-color: black;
+    color: white !important;
+    text-decoration: underline;
+    box-shadow: none;
+  }
+  
+  &:focus {
+    box-shadow: none;
+    outline: 4px dashed black;
+    outline-offset: 2px;
+  }
+}
+
