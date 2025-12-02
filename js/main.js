@@ -35,14 +35,52 @@ $(document).ready(function() {
     console.log("Initializing slick slider...");
 
   $('.hero-slider').slick({
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
+    slidesToShow: 1,
     dots: true,
+    fade: true,
     arrows: true,
-    arrowsPlacement: 'beforeSlides',
+    arrowsPlacement: 'split',
     prevArrow: '<button type="button" class="custom-prev-button">' + '  <span class="las la-angle-left" aria-hidden="true"></span>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
     nextArrow: '<button type="button" class="custom-next-button">' + '  <span class="las la-angle-right" aria-hidden="true"></span>' + '  <span class="sr-only">Next slide</span>' + '</button>',
     pauseIcon: '<span class="la la-pause" aria-hidden="true"></span>',
     playIcon: '<span class="la la-play" aria-hidden="true"></span>'
   });
 });
+
+// $('.responsive').slick({
+//   dots: true,
+//   infinite: false,
+//   speed: 300,
+//   slidesToShow: 4,
+//   slidesToScroll: 4,
+//   responsive: [
+//     {
+//       breakpoint: 1024,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 3,
+//         infinite: true,
+//         dots: true
+//       }
+//     },
+//     {
+//       breakpoint: 600,
+//       settings: {
+//         slidesToShow: 2,
+//         slidesToScroll: 2
+//       }
+//     },
+//     {
+//       breakpoint: 480,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       }
+//     }
+//     // You can unslick at a given breakpoint now by adding:
+//     // settings: "unslick"
+//     // instead of a settings object
+//   ]
+// });

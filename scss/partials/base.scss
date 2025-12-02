@@ -1,10 +1,16 @@
 :root {
   --color-black: black;
   --color-white: white;
+  --font-size-base: 16px;
 }
 
 header {
     padding: 0 !important;
+}
+
+p {
+    font-size: var(--font-size-base);
+
 }
 
 .hero__identity {
@@ -13,6 +19,8 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     .hero__logo {
         max-width: 200px;
@@ -22,6 +30,7 @@ header {
     .hero__site-title {
         font-size: 32px;
         font-weight: bold;
+        text-align: right;
     }   
 }
 
@@ -65,8 +74,20 @@ section {
 }
 
 //  utility 
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 .max-width {
-  max-width: 1400px;
+  max-width: 95%;
   margin: 0 auto;
 }
 
