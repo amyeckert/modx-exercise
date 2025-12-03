@@ -44,8 +44,8 @@ $(document).ready(function() {
     arrowsPlacement: 'split',
     prevArrow: '<button type="button" class="custom-prev-button">' + '  <i class="fa-solid fa-angle-left"></i>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
     nextArrow: '<button type="button" class="custom-next-button">' + '  <i class="fa-solid fa-angle-right"></i>' + '  <span class="sr-only">Next slide</span>' + '</button>',
-    pauseIcon: '<i class="fa-solid fa-pause"></i>',
-    playIcon: '<i class="fa-solid fa-play"></i>'
+    pauseIcon: '<i class="fa-solid fa-pause"><span class="sr-only">Pause</span></i>',
+    playIcon: '<i class="fa-solid fa-play"><span class="sr-only">Play</span></i>'
   });
 });
 
