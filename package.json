@@ -45,6 +45,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.4.1",
+    "gulp-terser": "^2.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "merge-stream": "^2.0.0",

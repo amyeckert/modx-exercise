@@ -4,7 +4,7 @@ const gulp = require('gulp'),
     sass = require('gulp-sass')(require('sass')), // Using dart-sass
     cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
+    terser = require('gulp-terser'),
     concat = require('gulp-concat'),
     jshint = require('gulp-jshint'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -92,7 +92,7 @@ function compileJs() {
         // concatenate into main.min.js and minify
     .pipe(concat('main.js'))
     // don't write the unminified file to the min folder; instead minify and write only the -min version
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.js.dest));

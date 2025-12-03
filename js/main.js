@@ -1,53 +1,68 @@
 // source: https://codepen.io/Radiergummi/pen/bjEZMO
+// source: https://github.com/danielhaim1/autotoc?tab=readme-ov-file#readme
 
-// window.addEventListener("load", () => {
- 
-//     // Retrieve all help sections 
-//  const sections = Array.from(document.querySelectorAll("section[id]"));
+$(document).ready(function(){
 
-//  // Once a scrolling event is detected, iterate all elements
-//  // whose visibility changed and highlight their navigation entry
-//  const scrollHandler = entries =>
-//   entries.forEach(entry => {
-//    const section = entry.target;
-//    const sectionId = section.id;
-//    const sectionLink = document.querySelector(`a[href="#${sectionId}"]`);
+    // Slick slider initialization
+    $('.hero-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 1,
+        dots: true,
+        fade: true,
+        arrows: true,
+        pauseOnHover:true,
+        pauseOnDotsHover:true,
+        arrowsPlacement: 'split',
+        prevArrow: '<button type="button" class="custom-prev-button">' + '  <i class="fa-solid fa-angle-left"></i>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
+        nextArrow: '<button type="button" class="custom-next-button">' + '  <i class="fa-solid fa-angle-right"></i>' + '  <span class="sr-only">Next slide</span>' + '</button>',
+        pauseIcon: '<i class="fa-solid fa-pause"><span class="sr-only">Pause</span></i>',
+        playIcon: '<i class="fa-solid fa-play"><span class="sr-only">Play</span></i>'
+    });
 
-//    if (entry.intersectionRatio > 0) {
-//     section.classList.add("visible");
-//     sectionLink.classList.add("visible");
-//    } else {
-//     section.classList.remove("visible");
-//     sectionLink.classList.remove("visible");
-//    }
-//   });
+    // Toc initialization
+    window.addEventListener("load", () => {
+        // Retrieve all help sections
+        const sections = Array.from(document.querySelectorAll("h2[id], h3[id], h4[id]"));
 
-//  // Creates a new scroll observer
-//  const observer = new IntersectionObserver(scrollHandler);
+        console.log('sections:', sections);
+        // Once a scrolling event is detected, iterate all elements
+        // whose visibility changed and highlight their navigation entry
+        const scrollHandler = (entries) => {
+            entries.forEach(entry => {
+                const section = entry.target;
+                const sectionId = section.id;
+                const sectionLink = document.querySelector(`a[href="#${sectionId}"]`);
+                
+                console.log('section-link:', sectionLink);
 
-//  //noinspection JSCheckFunctionSignatures
-//  sections.forEach(section => observer.observe(section));
-// });
+                if (entry.intersectionRatio > 0) {
+                    section.classList.add("visible");
+                    if (sectionLink) {
+                        sectionLink.classList.add("visible");
+                    }
+                } else {
+                    section.classList.remove("visible");
+                    if (sectionLink) {
+                        sectionLink.classList.remove("visible");
+                    }
+                }
+            });
+        };
 
-// Slick slider initialization
-$(document).ready(function() {
+        // Creates a new scroll observer
+        const observer = new IntersectionObserver(scrollHandler);
 
-    console.log("Initializing slick slider...");
-
-  $('.hero-slider').slick({
-    autoplay: true,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    dots: true,
-    fade: true,
-    arrows: true,
-    arrowsPlacement: 'split',
-    prevArrow: '<button type="button" class="custom-prev-button">' + '  <i class="fa-solid fa-angle-left"></i>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
-    nextArrow: '<button type="button" class="custom-next-button">' + '  <i class="fa-solid fa-angle-right"></i>' + '  <span class="sr-only">Next slide</span>' + '</button>',
-    pauseIcon: '<i class="fa-solid fa-pause"><span class="sr-only">Pause</span></i>',
-    playIcon: '<i class="fa-solid fa-play"><span class="sr-only">Play</span></i>'
-  });
+        //noinspection JSCheckFunctionSignatures
+        sections.forEach(section => observer.observe(section));
+    });
 });
+
+
+
+
+
+// });
 
 // $('.responsive').slick({
 //   dots: true,
