@@ -1,3 +1,50 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    label {
+
+        margin: 0;
+        padding: 0;
+    }
+    
+    input {
+        margin: 0;
+        padding: 1rem;
+        border: 1px solid var(--color-gray-light);
+    }
+
+    button[type=submit] {
+        margin-left: 0.5rem;
+        margin-top: 0;
+        padding: 0.5rem;
+        border-radius: 0;
+        background-color: var(--color-blue);
+        color: var(--color-text-link-light);
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+
+        i { font-size: 2rem;}
+
+        &:hover,
+        &:focus {
+            background-color: var(--color-white);
+            color: var(--color-blue-dark);
+
+            i { color: var(--color-blue-dark); }
+        }
+
+        &:focus  { outline: auto; }
+    }
+}
+
+
+
+
 [role=button], [type=button], [type=file]::file-selector-button, [type=reset], [type=submit], button {
     padding: 0.6em 1.2em;
     border-radius: 0.3em;
