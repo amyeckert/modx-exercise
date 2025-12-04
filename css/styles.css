@@ -680,6 +680,9 @@ form input {
 .hero-slider .custom-prev-button {
   left: 10px;
 }
+.hero-slider .slick-track {
+  height: 400px;
+}
 .hero-slider .slick-dots {
   display: flex;
   justify-content: center;
@@ -725,12 +728,16 @@ form input {
   position: absolute;
   width: 100%;
   height: auto;
-  bottom: 30px;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   text-align: center;
-  padding: 2px;
+}
+@media screen and (min-width: 480px) {
+  .hero-slider .slick-slide .overlay {
+    bottom: 20px;
+  }
 }
 .hero-slider .slick-slide .credit {
   position: absolute;
@@ -850,15 +857,7 @@ form input {
 }
 .hero-slider .slick-slide .background-image {
   width: 100%;
-  height: auto;
-  background-size: cover;
-}
-@media screen and (max-width: 768px) {
-  .hero-slider .slick-slide .background-image {
-    width: auto;
-    height: 600px;
-    margin: 0 auto;
-  }
+  min-height: 400px;
 }
 
 .sidebar {

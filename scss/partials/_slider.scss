@@ -77,6 +77,15 @@
     .custom-next-button { right: 10px; }
 
     .custom-prev-button { left: 10px; }
+
+    .slick-track {
+        height: 400px;
+
+        // @media screen and (min-width: 768px) { 
+        //     height: 600px; 
+        // } 
+
+    }
     
     .slick-dots {
         display: flex;
@@ -133,12 +142,15 @@
             position: absolute;
             width: 100%;
             height: auto;
-            bottom: 30px;
+            bottom: 10px;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             text-align: center;
-            padding: 2px;
+
+            @media screen and (min-width: 480px) {
+                bottom: 20px;
+            }
         }
 
         .credit { 
@@ -250,57 +262,19 @@
         
         .background-image {
             width: 100%;
-            height: auto;
-            background-size: cover;
+            min-height: 400px;
+
+            // img {
+            //     width: 100%;
+            //     height: auto;
+            // }
+ 
             
-            @media screen and (max-width: 768px) {
-                width: auto;
-                height: 600px;
-                margin: 0 auto;
-            }
+            // @media screen and (max-width: 768px) {
+            //     width: auto;
+            //     height: 600px;
+            //     margin: 0 auto;
+            // }
         }
     }
 }
-
-// main {
-
-  
-//   /** Documentation under carousel */
-//   .content {
-//     padding: 20px 15%;
-//     color: rgba(0,0,0,.9);
-//     line-height: 26px;
-    
-//     h1 {
-//       line-height: 36px;
-//     }
-    
-//     a {
-//       color: black;
-//       font-weight: bold;
-      
-//       &:hover,
-//       &:focus {
-//         color: royalblue;
-//       }
-//     }
-    
-//     li {
-//       margin-bottom: 15px;
-//       padding-left: 5px;
-//     }
-    
-//     code {
-//       background-color: rgba(0,0,0,.05);
-//       color: red;
-//       padding: 2px 8px;
-//     }
-    
-//     .btn {
-//       margin-top: 30px;
-//       font-size: 18px;
-//       padding: 10px 20px;
-//     }
-//   }
-// }
-
