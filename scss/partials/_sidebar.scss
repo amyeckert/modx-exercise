@@ -1,4 +1,18 @@
 .sidebar {
+    display: flex;
+    flex-flow:column nowrap;
+    order: 1;
+    width: 100%;
+    background-color: var(--color-blue-light);
+    padding: 1rem;
+    position: static;
+    
+    @media screen and (min-width: 1024px) {
+        position: sticky;
+        width: 22%;
+        order: 2;
+        padding: 2rem;
+    }
 
     .sidebar__intro {
         margin-bottom: 1rem;
@@ -10,10 +24,19 @@
         margin: 0;
         padding: 0;
         list-style: none;
-    }
 
-    .sidebar__nav-list {
+        ul li {
+            
+            &::before { display: none; }
+            
+            &::marker { color: var(--color-blue-dark); }
+        }
         
+        a {
+            display: block; 
+            height: 44px; 
+            
+            &.visible { font-weight: 700; }
+        }
     }
-    
 }

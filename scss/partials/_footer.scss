@@ -1,0 +1,120 @@
+// footer
+footer {
+    background-color: var(--color-blue-dark);
+    color: var(--color-white);
+    padding: 0 1rem 2rem;
+    color: var(--color-white);
+    
+    @media screen and (min-width: 768px) {
+        padding: 2rem 2rem;
+    }
+    
+    p { color: var(--color-white); }
+
+    a, 
+    li, 
+    address,
+    p { 
+        color: var(--color-white);
+        margin: 0;
+        padding: 0 0 1rem 0;
+
+        a, 
+        i { 
+            padding-bottom: 0;
+            color: var(--color-text-link-light);
+        }
+
+        a { display: inline; }
+
+        span { color: var(--color-white); }
+    }
+
+    .footer__inner {
+        width: 100%;
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+        }
+    }
+
+    .footer__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            flex-flow: row wrap;
+        }
+    }
+
+    .footer__content-right,
+    .footer__content-left {
+        width: 100%;
+        margin-top: 2rem;
+
+         @media screen and (min-width: 1024px) {
+           margin-top: 1rem;
+        }
+    }
+    
+    .footer__content-left {
+
+        @media screen and (min-width: 1024px) { 
+            width: 40%;
+            padding-right: 2rem; 
+        }
+
+        @media screen and (min-width: 1200px) { width: 45%; }
+    }
+
+    .footer__content-right {
+
+        @media screen and (min-width: 1024px) { width: auto; }
+
+        @media screen and (min-width: 1200px) { width: fit-content; }
+    }
+
+    .footer__links {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            display: inline-flex;
+            width: 100%;
+            color: var(--color-white);
+            margin: 0;
+            padding: 0;
+            border-right: 1px solid transparent;
+            padding: 0 0.5rem;
+            margin-bottom: 1rem;
+
+            @media screen and (min-width: 768px) {
+                width: fit-content;
+                border-right: 1px solid var(--color-white); 
+            }
+
+            &:last-child { border-right: none; }
+
+            &:first-child { padding-left: 0; }
+
+            a, 
+            i { 
+                padding-bottom: 0;
+                color: var(--color-text-link-light);
+                line-height: 1;
+            }
+
+            a { display: inline; }
+        }
+    }
+
+    .footer__bottom {
+        margin-top: 2rem;
+        
+        @media screen and (min-width: 768px) {
+            margin-top: 4rem;
+        }
+    }
+}

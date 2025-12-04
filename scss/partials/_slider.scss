@@ -35,8 +35,8 @@
     button.slick-autoplay-toggle-button {
         display: block;
         left: auto;
-        right: 1px;
-        top: 1px;
+        right: 16px;
+        top: 10px;
         bottom: auto;
         padding: 1rem;
         border: 0;
@@ -48,6 +48,11 @@
         height: 45px;
         cursor: pointer;
         color: black !important;
+
+        @media screen and (min-width: 768px) {
+            right: 1px;
+            top: 1px;
+        }
     }
   
     /** Custom previous and next arrows in the top right corner */
@@ -73,11 +78,14 @@
 
     .custom-prev-button { left: 10px; }
     
-    /** Default slide navigation dots */
     .slick-dots {
         display: flex;
         justify-content: center;
-        bottom: -70px;
+        bottom: -50px;
+        
+        @media screen and (min-width: 1024px) {
+            bottom: -70px;                   
+        }
 
         li {
             margin: 0 1px;
@@ -116,29 +124,21 @@
                 }
             }
        }
-    }
-    
-    /** Slide content */
+    }  
+
     .slick-slide {
-        position: relative;
-        height: 600px;
-        display: flex;
-        align-items: center;
         
-        /** Float text overlay */
+        // text overlay
         .overlay {
             position: absolute;
             width: 100%;
-            top: 0; 
-            padding: 20px;
+            height: auto;
+            bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
             text-align: center;
-            
-            // @media screen and (max-width: 768px) {
-            //     width: 80%;
-            //     left: 0 !important;
-            //     top: 100px !important;
-            //     // text-align: left;
-            // }
+            padding: 2px;
         }
 
         .credit { 
@@ -149,14 +149,17 @@
             width: fit-content;
             background-color: #f5f8ff;
             margin: 0;
-            padding: 0.75rem;
+            padding: 0.25rem;
             font-style: italic;
             text-align: left;
             text-decoration: underline;
             color: #143d90;
 
+            @media screen and (min-width: 768px) { padding: 0.75rem; }
+
             a {
                 font-style: italic;
+                font-size: 0.8rem;
             }
 
             &:hover,
@@ -166,30 +169,54 @@
         }
         
         .overlay__content {
-            display: block;
-            width: 50%;
+            display: flex;
+            flex-direction: column;
             max-width: fit-content;
             text-align: center;
-            margin: 0 auto;
-            margin-top: 150px;
+            padding-bottom: 1rem;
 
-            h2 {
+            @media screen and (min-width: 768px) { width: 75%;}
+            
+            @media screen and (min-width: 1024px) {
+                width: fit-content;
+                font-size: 65px;                
+                padding: 0;
+            }
+
+            h2:has(.overlay__background) {
                 padding: 0;
                 margin: 0;
-                font-size: 65px !important;
-                text-align: center !important;
+                font-size: 1.2rem;
+                text-align: center;
+
+                @media screen and (min-width: 480px) { font-size: 1.4rem; }
+
+                @media screen and (min-width: 768px) { font-size: 2rem; }
+
+                @media screen and (min-width: 1024px) { font-size: 3.5rem; }
             }
-        
+
+            &.offset {
+                margin-left: 13%;
+            }
+
+
         }
         
         .overlay__subtitle {
             display: block;
             padding: 1rem;
             max-width:75%;
-            margin: 2rem auto;
+            margin: 1rem auto;
             background-color: var(--color-blue-light);
-            font-size: 18px;
+            font-size: 14px;
             border-radius: var(--border-radius-box);
+
+            @media screen and (min-width: 768px) {
+                margin: 2rem auto;
+                font-size: 18px;
+                max-width: 768px;
+            }
         }
 
         .overlay__background {
@@ -197,8 +224,12 @@
             display: inline-block;
             margin-bottom: 1rem;
             background-color: #fff;
-            padding: 7px 20px 7px;
+            padding: 7px;
             border-radius: 50px;
+            
+            @media screen and (min-width: 768px) {
+                padding: 7px 20px 7px;              
+            }
 
             &::after,
             &::before {  

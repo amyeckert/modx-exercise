@@ -1,8 +1,10 @@
 /********************
 ** Partials
 ********************/
+@use 'partials/normalize';
 @use 'partials/base';
 @use 'partials/slider';
 @use 'partials/sidebar';
-@use 'partials/buttons';
+@use 'partials/forms';
+@use 'partials/footer';
 
