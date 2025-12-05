@@ -1,6 +1,3 @@
-// source: https://codepen.io/Radiergummi/pen/bjEZMO
-// source: https://github.com/danielhaim1/autotoc?tab=readme-ov-file#readme
-
 $(document).ready(function(){
 
     // Slick slider initialization
@@ -14,8 +11,8 @@ $(document).ready(function(){
         pauseOnHover:true,
         pauseOnDotsHover:true,
         arrowsPlacement: 'split',
-        prevArrow: '<button type="button" class="custom-prev-button">' + '  <i class="fa-solid fa-angle-left"></i>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
-        nextArrow: '<button type="button" class="custom-next-button">' + '  <i class="fa-solid fa-angle-right"></i>' + '  <span class="sr-only">Next slide</span>' + '</button>',
+        prevArrow: '<button type="button" class="button button--previous">' + '  <i class="fa-solid fa-angle-left"></i>' + '  <span class="sr-only">Previous slide</span>' + '</button>',
+        nextArrow: '<button type="button" class="button button--next">' + '  <i class="fa-solid fa-angle-right"></i>' + '  <span class="sr-only">Next slide</span>' + '</button>',
         pauseIcon: '<i class="fa-solid fa-pause"><span class="sr-only">Pause</span></i>',
         playIcon: '<i class="fa-solid fa-play"><span class="sr-only">Play</span></i>',
         responsive: [
@@ -43,7 +40,7 @@ $(document).ready(function(){
         ]
     });
 
-    // Toc initialization
+    // TOC initialization
     window.addEventListener("load", () => {
         // Retrieve all help sections
         const sections = Array.from(document.querySelectorAll("h2[id], h3[id], h4[id]"));
@@ -79,46 +76,5 @@ $(document).ready(function(){
         //noinspection JSCheckFunctionSignatures
         sections.forEach(section => observer.observe(section));
     });
+
 });
-
-
-
-
-
-// });
-
-// $('.responsive').slick({
-//   dots: true,
-//   infinite: false,
-//   speed: 300,
-//   slidesToShow: 4,
-//   slidesToScroll: 4,
-//   responsive: [
-//     {
-//       breakpoint: 1024,
-//       settings: {
-//         slidesToShow: 3,
-//         slidesToScroll: 3,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 600,
-//       settings: {
-//         slidesToShow: 2,
-//         slidesToScroll: 2
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//     // You can unslick at a given breakpoint now by adding:
-//     // settings: "unslick"
-//     // instead of a settings object
-//   ]
-// });

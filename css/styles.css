@@ -344,7 +344,7 @@ main {
   }
 }
 
-article.content {
+article {
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
@@ -353,7 +353,7 @@ article.content {
   order: 2;
 }
 @media screen and (min-width: 1024px) {
-  article.content {
+  article {
     order: 1;
     width: 70%;
   }
@@ -455,7 +455,8 @@ h1, h2, h3, h4, h5, h6 {
 
 span:not(.overlay__background),
 p,
-a, figcaption {
+a,
+figcaption {
   margin-top: 0;
   font-size: var(--font-size-base);
   font-family: var(--font-family-base) !important;
@@ -468,13 +469,15 @@ a, figcaption {
 }
 .hero__site-title span:not(.overlay__background),
 .hero__site-title p,
-.hero__site-title a, .hero__site-title figcaption {
+.hero__site-title a,
+.hero__site-title figcaption {
   text-align: center;
 }
 @media screen and (min-width: 480px) {
   .hero__site-title span:not(.overlay__background),
   .hero__site-title p,
-  .hero__site-title a, .hero__site-title figcaption {
+  .hero__site-title a,
+  .hero__site-title figcaption {
     text-align: right;
   }
 }
@@ -574,7 +577,7 @@ form input {
 }
 
 .text-white {
-  color: var(--color-white);
+  color: var(--color-white) !important;
 }
 
 .btn {
@@ -601,12 +604,9 @@ form input {
   outline-offset: 2px;
 }
 
-/********************
- ** Slider Styles
- ********************/
 .hero-slider {
-  margin: 0 !important;
-  width: 100vw !important;
+  margin: 0;
+  width: 100vw;
 }
 .hero-slider button i {
   position: relative;
@@ -627,9 +627,6 @@ form input {
 }
 .hero-slider button:focus {
   outline: auto;
-}
-.hero-slider {
-  /** Autoplay toggle button in the top left corner */
 }
 .hero-slider button.slick-autoplay-toggle-button {
   display: block;
@@ -654,11 +651,7 @@ form input {
     top: 1px;
   }
 }
-.hero-slider {
-  /** Custom previous and next arrows in the top right corner */
-}
-.hero-slider .custom-prev-button,
-.hero-slider .custom-next-button {
+.hero-slider .button {
   position: absolute;
   top: calc(50% - 20px);
   z-index: 1;
@@ -674,14 +667,19 @@ form input {
   color: black;
   border-radius: 50%;
 }
-.hero-slider .custom-next-button {
+.hero-slider .button--next {
   right: 10px;
 }
-.hero-slider .custom-prev-button {
+.hero-slider .button--previous {
   left: 10px;
 }
 .hero-slider .slick-track {
   height: 400px;
+}
+@media screen and (min-width: 768px) {
+  .hero-slider .slick-track {
+    height: 600px;
+  }
 }
 .hero-slider .slick-dots {
   display: flex;
@@ -724,7 +722,28 @@ form input {
   opacity: 1 !important;
   border: 4px solid #f32b2b !important;
 }
+.hero-slider .slick-slide img {
+  display: none;
+}
+.hero-slider .slick-slide .slide {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-slider .slick-slide .slide__bg-img-1 {
+  background-image: url("/images/ash-edmonds-mXBZo6PvjMk-unsplash.jpg");
+}
+.hero-slider .slick-slide .slide__bg-img-2 {
+  background-image: url("/images/crispin-jones-sweDAVjbU3Q-unsplash.jpg");
+}
 .hero-slider .slick-slide .overlay {
+  z-index: 10001;
   position: absolute;
   width: 100%;
   height: auto;
@@ -740,6 +759,7 @@ form input {
   }
 }
 .hero-slider .slick-slide .credit {
+  z-index: 10002;
   position: absolute;
   left: 0;
   top: 10px;
@@ -854,10 +874,6 @@ form input {
 }
 .hero-slider .slick-slide .overlay__background::after {
   box-shadow: 0px 12px 14px #1049BA;
-}
-.hero-slider .slick-slide .background-image {
-  width: 100%;
-  min-height: 400px;
 }
 
 .sidebar {

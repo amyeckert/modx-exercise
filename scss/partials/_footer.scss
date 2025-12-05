@@ -33,9 +33,7 @@ footer {
     .footer__inner {
         width: 100%;
 
-        @media screen and (min-width: 1200px) {
-            width: 75%;
-        }
+        @media screen and (min-width: 1200px) { width: 75%; }
     }
 
     .footer__content {
@@ -44,9 +42,7 @@ footer {
         justify-content: space-between;
         width: 100%;
 
-        @media screen and (min-width: 1024px) {
-            flex-flow: row wrap;
-        }
+        @media screen and (min-width: 1024px) { flex-flow: row wrap; }
     }
 
     .footer__content-right,
@@ -54,9 +50,7 @@ footer {
         width: 100%;
         margin-top: 2rem;
 
-         @media screen and (min-width: 1024px) {
-           margin-top: 1rem;
-        }
+         @media screen and (min-width: 1024px) { margin-top: 1rem; }
     }
     
     .footer__content-left {
@@ -113,8 +107,6 @@ footer {
     .footer__bottom {
         margin-top: 2rem;
         
-        @media screen and (min-width: 768px) {
-            margin-top: 4rem;
-        }
+        @media screen and (min-width: 768px) { margin-top: 4rem; }
     }
 }
