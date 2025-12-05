@@ -355,7 +355,7 @@ article {
 @media screen and (min-width: 1024px) {
   article {
     order: 1;
-    width: 70%;
+    width: 80vw;
   }
 }
 
@@ -374,6 +374,12 @@ section .section__content--right {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  section .section__content--left,
+  section .section__content--right {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1024px) {
   section .section__content--left {
@@ -456,7 +462,8 @@ h1, h2, h3, h4, h5, h6 {
 span:not(.overlay__background),
 p,
 a,
-figcaption {
+figcaption,
+li {
   margin-top: 0;
   font-size: var(--font-size-base);
   font-family: var(--font-family-base) !important;
@@ -470,16 +477,27 @@ figcaption {
 .hero__site-title span:not(.overlay__background),
 .hero__site-title p,
 .hero__site-title a,
-.hero__site-title figcaption {
+.hero__site-title figcaption,
+.hero__site-title li {
   text-align: center;
 }
 @media screen and (min-width: 480px) {
   .hero__site-title span:not(.overlay__background),
   .hero__site-title p,
   .hero__site-title a,
-  .hero__site-title figcaption {
+  .hero__site-title figcaption,
+  .hero__site-title li {
     text-align: right;
   }
+}
+
+ol::before,
+li::before {
+  display: none;
+}
+ol::marker,
+li::marker {
+  color: var(--color-blue-dark);
 }
 
 a {
@@ -509,6 +527,10 @@ figure img {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+figure figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .hero__identity {
@@ -737,10 +759,10 @@ form input {
   background-repeat: no-repeat;
 }
 .hero-slider .slick-slide .slide__bg-img-1 {
-  background-image: url("/images/ash-edmonds-mXBZo6PvjMk-unsplash.jpg");
+  background-image: url("images/ash-edmonds-mXBZo6PvjMk-unsplash.jpg");
 }
 .hero-slider .slick-slide .slide__bg-img-2 {
-  background-image: url("/images/crispin-jones-sweDAVjbU3Q-unsplash.jpg");
+  background-image: url("images/crispin-jones-sweDAVjbU3Q-unsplash.jpg");
 }
 .hero-slider .slick-slide .overlay {
   z-index: 10001;
@@ -882,15 +904,21 @@ form input {
   order: 1;
   width: 100%;
   background-color: var(--color-blue-light);
+  background-image: url("../images/noise-bg.png");
+  background-repeat: repeat;
+  background-position: center center;
   padding: 1rem;
   position: static;
 }
 @media screen and (min-width: 1024px) {
   .sidebar {
     position: sticky;
-    width: 22%;
+    top: 2rem;
+    align-self: flex-start;
+    width: 20vw;
     order: 2;
     padding: 2rem;
+    margin-right: 2rem;
   }
 }
 .sidebar .sidebar__intro {
@@ -903,15 +931,9 @@ form input {
   padding: 0;
   list-style: none;
 }
-.sidebar .sidebar__nav ul li::before {
-  display: none;
-}
-.sidebar .sidebar__nav ul li::marker {
-  color: var(--color-blue-dark);
-}
 .sidebar .sidebar__nav a {
   display: block;
-  height: 44px;
+  padding: 0.5rem 0;
 }
 .sidebar .sidebar__nav a.visible {
   font-weight: 700;
@@ -967,9 +989,12 @@ form button[type=submit]:focus {
 
 footer {
   background-color: var(--color-blue-dark);
+  background-image: url("..assets/images/stardust.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   color: var(--color-white);
   padding: 0 1rem 2rem;
-  color: var(--color-white);
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -1015,7 +1040,7 @@ footer .footer__inner {
 }
 @media screen and (min-width: 1200px) {
   footer .footer__inner {
-    width: 75%;
+    width: 72.5vw;
   }
 }
 footer .footer__content {

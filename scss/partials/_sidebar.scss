@@ -4,14 +4,20 @@
     order: 1;
     width: 100%;
     background-color: var(--color-blue-light);
+    background-image: url('../images/noise-bg.png'); 
+    background-repeat: repeat;
+    background-position: center center;
     padding: 1rem;
     position: static;
     
     @media screen and (min-width: 1024px) {
         position: sticky;
-        width: 22%;
+        top: 2rem;
+        align-self: flex-start;
+        width: 20vw;
         order: 2;
         padding: 2rem;
+        margin-right: 2rem;
     }
 
     .sidebar__intro {
@@ -24,17 +30,10 @@
         margin: 0;
         padding: 0;
         list-style: none;
-
-        ul li {
-            
-            &::before { display: none; }
-            
-            &::marker { color: var(--color-blue-dark); }
-        }
         
         a {
             display: block; 
-            height: 44px; 
+            padding: 0.5rem 0;
             
             &.visible { font-weight: 700; }
         }
